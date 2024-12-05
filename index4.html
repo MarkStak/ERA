@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Как зайти - NEW ERA</title>
+    <script src="Skript.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="img/image_2024-12-04_22-38-50.png" alt="Логотип" class="logo">
+            <a href="index.html">Главная</a>
+            <a href="index2.html">Плагины</a>
+            <a href="index3.html">О сервере</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <div class="join-container">
+            <h1>Как присоединиться к серверу?</h1>
+            
+            <div class="join-steps">
+                <div class="step">
+                    <h2>Шаг 1: Присоединитесь к нашему Discord</h2>
+                    <p>Для начала вам необходимо присоединиться к нашему Discord-серверу. Там вы найдете анкету для вступления и сможете познакомиться с нашим сообществом.</p>
+                    <a href="https://discord.gg/VMRzWqX5" class="discord-button" target="_blank">
+                        <img src="img/icons8-discord-new.svg" alt="Discord">
+                        Присоединиться к Discord
+                    </a>
+                </div>
+
+                <div class="step">
+                    <h2>Шаг 2: Заполните анкету</h2>
+                    <p>В Discord-сервере найдите канал #анкеты и заполните форму. Мы рассмотрим вашу заявку в течение 24 часов.</p>
+                </div>
+
+                <div class="step">
+                    <h2>Шаг 3: IP-адрес сервера</h2>
+                    <p>После одобрения заявки вы получите доступ к IP-адресу сервера:</p>
+                    <div class="ip-container">
+                        <code id="serverIp">play.newera.mc</code>
+                        <button onclick="copyIp()" class="copy-button">Скопировать IP</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="contacts">
+        <div class="footer-content">
+            <h2>Наши контакты</h2>
+            <div class="contact-links">
+                <a href="https://discord.gg/your-link" target="_blank">
+                    <img src="img/icons8-discord-new.svg" alt="Discord" class="discord-icon">
+                    Discord
+                </a>
+                <a href="https://t.me/your-channel" target="_blank">
+                    <img src="img/icons8-telegram-app.svg" alt="Telegram" class="telegram-icon">
+                    Telegram
+                </a>
+                <a href="https://vk.com/your-group" target="_blank">
+                    <img src="img/icons8-vk-circled.svg" alt="VK" class="vk-icon">
+                    VK
+                </a>
+            </div>
+            <p class="copyright">© 2024 NEW ERA. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        function copyIp() {
+            const ipText = document.getElementById('serverIp').textContent;
+            navigator.clipboard.writeText(ipText)
+                .then(() => {
+                    const button = document.querySelector('.copy-button');
+                    const originalText = button.textContent;
+                    button.textContent = 'Скопировано!';
+                    setTimeout(() => {
+                        button.textContent = originalText;
+                    }, 2000);
+                })
+                .catch(err => {
+                    console.error('Ошибка при копировании:', err);
+                    alert('Не удалось скопировать IP-адрес');
+                });
+        }
+    </script>
+</body>
+</html>

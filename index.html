@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script src="auth.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+                <div class="nav-buttons">
+                  <button class="nav-btn" onclick="toggleMenu('loginMenu')">Войти</button>
+                  <button class="nav-btn" onclick="toggleMenu('registerMenu')">Регистрация</button>
+                </div>
+              
+                <!-- Всплывающее меню для логина -->
+                <menu id="loginMenu" class="popup-menu">
+                  <form class="login-form">
+                    <h3>Вход</h3>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Пароль" required>
+                    <button type="submit">Войти</button>
+                    <button type="button" onclick="toggleMenu('loginMenu')">Закрыть</button>
+                  </form>
+                </menu>
+              
+                <!-- Всплывающее меню для регистрации -->
+                <menu id="registerMenu" class="popup-menu">
+                  <form class="register-form">
+                    <h3>Регистрация</h3>
+                    <input type="text" placeholder="Имя" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Пароль" required>
+                    <input type="password" placeholder="Подтвердите пароль" required>
+                    <button type="submit">Зарегистрироваться</button>
+                    <button type="button" onclick="toggleMenu('registerMenu')">Закрыть</button>
+                  </form>
+                </menu>
+            <img src="img/image_2024-12-04_22-38-50.png" alt="Логотип" class="logo">
+            <a href="index2.html">Плагины</a>
+            <a href="index3.html">О сервере</a>
+            <a href="index4.html">Как зайти</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+        
+    </header>
+    <div class="content">
+        <div class="image-container">
+            <img src="img/image_2024-12-04_22-53-50.png" alt="Minecraft Server Image" class="rounded-image">
+                <div class="overlay-text">
+                    <p>NEW ERA - Приватный ванильный сервер для версий 1.21+</p>
+                    <p>Здесь вы сможете свободно общаться, развиваться и совместно проходить игру. На сервере нет приватов, статусов и прочих ограничений. Лицензия не требуется.</p>
+                    <p>Установленные плагины:</p>
+                    <ul>
+                        <li>- BreweryX - Возможность варить различные напитки, такие как пиво или горячий шоколад</li>
+                        <li>- HeadDrop - Выпадение голов с игроков и небольшой шанс выпадения голов с мобов</li>
+                        <li>- GSit - Возможность сидеть и лежать</li>
+                        <li>- И множество других интересных плагинов</li>
+                    </ul>
+                    <p>У нас действует система судов, так что гриферов и флудеров ждёт наказание, а на сервере будут поддерживаться порядок и ламповая атмосфера.</p>
+                    <p>Вступление идёт по заявкам. Ждём всех на NEW ERA!</p>
+                </div>
+        </div>
+    </div>
+    <footer id="contacts">
+        <div class="footer-content">
+            <h2>Наши контакты</h2>
+            <div class="contact-links">
+                <a href="https://discord.gg/your-link" target="_blank">
+                    <img src="img/icons8-discord-new.svg" alt="Discord" class="discord-icon">
+                    Discord
+                </a>
+                <a href="https://t.me/your-channel" target="_blank">
+                    <img src="img/icons8-telegram-app.svg" alt="Telegram" class="telegram-icon">
+                    Telegram
+                </a>
+                <a href="https://vk.com/your-group" target="_blank">
+                    <img src="img/icons8-vk-circled.svg" alt="VK" class="vk-icon" >
+                    VK
+                </a>
+            </div>
+            <p class="copyright">© 2024 NEW ERA. Все права защищены.</p>
+        </div>
+    </footer>
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="auth-tabs">
+                <button class="tab-btn active" data-tab="login">Вход</button>
+                <button class="tab-btn" data-tab="register">Регистрация</button>
+            </div>
+            
+            <form id="loginForm" class="auth-form">
+                <h2>Вход</h2>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Пароль" required>
+                <button type="submit">Войти</button>
+            </form>
+    
+            <form id="registerForm" class="auth-form" style="display: none;">
+                <h2>Регистрация</h2>
+                <input type="text" placeholder="Имя пользователя" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Пароль" required>
+                <input type="password" placeholder="Подтвердите пароль" required>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        function openAuthWindow() {
+            window.open('auth.html', 'authWindow', 'width=500,height=600');
+        }
+    </script>
+</body>
+</html>
